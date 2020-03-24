@@ -1,0 +1,29 @@
+# Check if number is Paindrome
+palindrome_number = int(input("The number is: "))
+temp = palindrome_number
+reverse_number = 0
+while (temp != 0):
+    remainder=temp%10
+    reverse_number=reverse_number*10+remainder
+    temp=temp//10
+if (reverse_number==palindrome_number):
+    print(f"The number {palindrome_number} is palindrome. ")
+else:
+    print(f"No, {palindrome_number} not a palindrome number")
+    
+#PALINDROME STRING
+palindrome_string = input(" The string is: ")
+string_length = len(palindrome_string)
+end = string_length - 1
+print(end)
+middle_string = string_length//2
+print (middle_string)
+for i in range(0, middle_string):
+    if palindrome_string[i] == palindrome_string[-i -1]:
+        i+=1
+    else:
+        break
+if i<(string_length/2):
+    print("no")
+else:
+    print("yes")

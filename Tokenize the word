@@ -2,18 +2,3 @@
 string = input(" Enter your string: ")
 output = string.split(" ")
 print(output)
-
-#without using split function
-def string (s):
-    word = ""
-    for i in s:
-        if i == " ":
-            print(word)
-            word = " "
-        else:
-            word = word + i
-    print(word)
-
-
-s = "hey all. how you doing?"
-string(s)

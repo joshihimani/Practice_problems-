@@ -1,0 +1,16 @@
+#PALINDROME STRING
+palindrome_string = input(" The string is: ")
+string_length = len(palindrome_string)
+end = string_length - 1
+print(end)
+middle_string = string_length//2
+print (middle_string)
+for i in range(0, middle_string):
+    if palindrome_string[i] == palindrome_string[-i -1]:
+        i+=1
+    else:
+        break
+if i<(string_length/2):
+    print("no")
+else:
+    print("yes")

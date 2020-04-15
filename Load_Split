@@ -1,0 +1,5 @@
+mport librosa
+audiofile = librosa.util.example_audio_file()
+y, sr = librosa.load(audiofile)
+output_file = librosa.effects.split(y,  top_db=30)
+print(output_file)

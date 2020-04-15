@@ -1,2 +1,0 @@
-import playsound
-playsound("/home/hp/Downloads/birdcall1.wav")

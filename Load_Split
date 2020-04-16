@@ -1,5 +1,17 @@
-mport librosa
-audiofile = librosa.util.example_audio_file()
-y, sr = librosa.load(audiofile)
-output_file = librosa.effects.split(y,  top_db=30)
-print(output_file)
+import librosa
+y, sr = librosa.load("birdcall.wav")
+# new file of size 30 seconds
+sample_size = 30 * sr #samlping rate with the new file
+size = len(y)
+flag = 0
+i = 1
+while flag < size:
+    #check if the 30 seconds does not exceed
+    if sample_size > (size - flag):
+        sample_size = size - flag
+    block = y[flag : (flag + sample_size)] # block = new array with given range
+    new_file = "New split_" + str(i) + "_" + "File.wav" // saving with new name
+    # Write 30 second segment
+    librosa.output.write_wav(new_file, block, sr)
+    i += 1
+    flag += sample_size

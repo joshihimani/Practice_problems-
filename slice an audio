@@ -1,0 +1,11 @@
+import librosa
+y,sr = librosa.load("birdcall.wav")
+#print(y)
+#print(len(y))
+x= slice(0,560086)
+#print (y[1])
+librosa.output.write_wav("newbirdcall.wav",y[x], sr)
+z=slice(560087,1120173)
+librosa.output.write_wav("newbirdcall1.wav",y[z], sr)
+t=slice(1120174, 1680256)
+librosa.output.write_wav("newbirdcall2.wav",y[t], sr)

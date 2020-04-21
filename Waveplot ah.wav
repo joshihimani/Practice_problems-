@@ -1,7 +1,7 @@
 import librosa
 import matplotlib.pyplot as plt
 import librosa.display
-y, sr = librosa.load("should.wav")
+y, sr = librosa.load("ah.wav")
 plt.figure(figsize=(7,5))
 librosa.display.waveplot(y,sr)
 plt.title('Time domain Signal')                      

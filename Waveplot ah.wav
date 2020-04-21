@@ -1,0 +1,11 @@
+import numpy as np 
+import matplotlib.pyplot as plt 
+import librosa 
+import librosa.display
+y, sr = librosa.load("ah.wav")
+D = np.abs(librosa.stft(y))
+librosa.display.specshow(librosa.amplitude_to_db(D, ref=np.max),y_axis='log', x_axis='time')
+plt.title('Spectrogram')
+plt.colorbar(format='%+2.0f dB')
+plt.tight_layout()
+plt.show()                       

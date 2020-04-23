@@ -1,0 +1,14 @@
+import librosa
+y,sr = librosa.load("birdcall.wav")
+length = len(y)
+start = 0
+no_of_parts = 3
+size = int(length/no_of_parts)
+end = size
+i = 0
+while start < length:
+    x = y[start:end]
+    librosa.output.write_wav("newfile.wav "  + "version" + str(i) , x, sr)
+    i = i + 1
+    start = end
+    end = (start + end)

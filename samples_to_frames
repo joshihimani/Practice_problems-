@@ -1,0 +1,27 @@
+fs = input("Enter the sampling rate: ")
+fs = int(fs)
+
+duration = input("Enter the duration: ")
+duration = int(duration)
+
+samples = fs * duration
+print("Samples per sec:", samples)
+
+
+import numpy as np
+n = np.empty((0,samples))
+for i in range(samples):
+    n = np.append(n,i)
+print(f'n = {n}')
+
+
+import librosa
+
+frames = librosa.util.frame(n, frame_length=10, hop_length=7,axis=0)
+print(frames)
+
+
+'''
+frames = librosa.samples_to_frames(n,5)
+print(frames)
+'''

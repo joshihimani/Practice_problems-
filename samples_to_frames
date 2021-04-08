@@ -16,12 +16,13 @@ print(f'n = {n}')
 
 
 import librosa
-
-frames = librosa.util.frame(n, frame_length=10, hop_length=7,axis=0)
+frame_length = input("Enter the frame length: ")
+frame_length = int(frame_length)
+hop_length= input("Enter the hop length: ")
+hop_length = int(hop_length)
+frames = librosa.util.frame(n, frame_length, hop_length,axis=0)
 print(frames)
 
-
-'''
-frames = librosa.samples_to_frames(n,5)
-print(frames)
-'''
+f = open("samples_to_frames.txt","w+")
+f.write(str(frames))
+f.close()
